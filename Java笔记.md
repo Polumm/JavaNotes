@@ -39,7 +39,10 @@
 
   5. 非public的main方法：其他类个数不限，也可将main方法写在非public类里，然后运行非public类
 
-  `//1.public的类hello
+  
+
+```java
+//1.public的类hello
   public class hello{
    //编写一个main方法
    public static void main(String[] args){
@@ -59,7 +62,10 @@
    public static void main(String[] args){
     System.out.println("wowo");
    }
-  }`
+  }
+```
+
+
 
   ### 常见bug
 
@@ -79,15 +85,19 @@
 
 注意转义字符
 
-`class println{
+```java
+class println{
 	public static void main(String[] args){
 		System.out.println("java Test\n书名\t作者\t价格\t销量\n三国\t罗贯中\t120\t1000");
 	}
-}`
+}
+```
+
+
 
 ## 此处暂时省略文档注释的生成0024
 
-
+一次多行注释用ctrl+/
 
 ## 3.5 加号的使用
 
@@ -146,13 +156,33 @@ char c = 'x';
 Character ch = new Character(c);
 ```
 
-![image-20210825230129195](D:/Coding/JavaNotes/Java%E7%AC%94%E8%AE%B0.assets/image-20210825230129195.png)
+
 
 ### **4.new why-when**
 
 ### **5.查阅API**
 
-### **6.int和float的细节**
+API (Application Programming Interface) 应用程序编程接口
+
+Java 类的组织形式
+
+![](D:/Coding/JavaNotes/Java%E7%AC%94%E8%AE%B0.assets/image-20210826000017445.png)
+
+1.按组织结构查：JDK-包-类……
+
+2.直接索引
+
+[中文在线文档](www.matools.com)
+
+### 6.int和float的细节
+
+**float陷阱**：对*运算过后*的小数进行比较很危险！
+
+**安全的写法**：应该是将:两个数的差值的绝对值，在某个精度范围内判断
+
+```java
+if(Math.abs(num1 - mum2) < 0.0001) 
+```
 
 ### **7.字符型**
 
@@ -163,6 +193,10 @@ Character ch = new Character(c);
 ### **10.String类**
 
 ### **11.代码练习**
+
+### **12.更改快捷键**
+
+在首选项-按键绑定-默认中查找(ctrl+f)到原有快捷键，复制到首选项-按键绑定-用户中(记得更改好新的快捷键!)
 
 
 
