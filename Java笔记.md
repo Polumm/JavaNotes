@@ -176,7 +176,7 @@ Java 类的组织形式
 
 ### 6.int和float的细节
 
-**float陷阱**：对*运算过后*的小数进行比较很危险！
+***float陷阱**：对*运算过后*的小数进行比较很危险！
 
 **安全的写法**：应该是将:两个数的差值的绝对值，在某个精度范围内判断
 
@@ -184,7 +184,47 @@ Java 类的组织形式
 if(Math.abs(num1 - mum2) < 0.0001) 
 ```
 
+
+
 ### **7.字符型**
+
+C++中char占1个字节而**Java中char占两个字节！**
+
+为什么？因为**Java中char对应的是Unicode码！**
+
+​	汉字有对应的Unicode码，一个汉字可以用一个char表示
+
+```java
+class charTest{
+	//编写一个main方法
+	public static void main(String[] args){
+		char a = 'a';//字符'a'
+		System.out.println(a);
+		char b = 97;//unicode码为97的字符
+		System.out.println(b);
+		char c = '宋';//字符'宋'
+		System.out.println(c);
+		char d = '9';//字符'9'
+		System.out.println(d);
+		char e = '\141';
+		System.out.println(e);
+		//以下非法：'\xnn'在Java里非法!
+		// char f = '\x61';
+		// System.out.println(f);
+		
+		//建立字符与编码间的联系
+		System.out.println((int)c);//输出字符'宋'的Unicode码：23435
+		char f = 23435;//直接存'宋'的Unicode码
+		System.out.println(f);//用Unicode码输出字符'宋'
+		
+		//char相当于一个整数，可以直接参与运算
+		char g = 'a';
+		System.out.println(g + 10);
+	}
+}
+```
+
+
 
 ### **8.编码集**
 
