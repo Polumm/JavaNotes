@@ -186,7 +186,7 @@ if(Math.abs(num1 - mum2) < 0.0001)
 
 
 
-### **7.字符型**
+### **7.字符型**与自动转换
 
 C++中char占1个字节而**Java中char占两个字节！**
 
@@ -195,6 +195,21 @@ C++中char占1个字节而**Java中char占两个字节！**
 ​	汉字有对应的Unicode码，一个汉字可以用一个char表示
 
 ```java
+//1.public的类hello
+public class hello{
+	//编写一个main方法
+	public static void main(String[] args){
+		System.out.println("hello walodo来个中文");
+	}
+}
+//2.非主类cat
+class cat{
+	//编写一个main方法
+	public static void main(String[] args){
+		System.out.println("mipa~");
+	}
+}
+//3.非主类char
 class charTest{
 	//编写一个main方法
 	public static void main(String[] args){
@@ -208,8 +223,8 @@ class charTest{
 		System.out.println(d);
 		char e = '\141';
 		System.out.println(e);
-		//以下非法：'\xnn'在Java里非法!
-		// char f = '\x61';
+		//以下非法：不知道为什么
+		// char f = '\0x0061';
 		// System.out.println(f);
 		
 		//建立字符与编码间的联系
@@ -220,6 +235,39 @@ class charTest{
 		//char相当于一个整数，可以直接参与运算
 		char g = 'a';
 		System.out.println(g + 10);
+	}
+}
+
+//4.格式化输出练习
+//一次多行注释用ctrl+/
+class println{
+	public static void main(String[] args){
+		System.out.println("java Test\n书名\t作者\t价格\t销量\n三国\t罗贯中\t120\t1000");
+	}
+}
+
+//6.数据类型转化练习
+class AutoConvertDetail{
+	public static void main(String[] args){
+		//java中默认浮点为double
+		float a = 1.1f;
+		//float b = 1.1;//这是错的，Java中浮点默认double，要想声明为float必需加
+		
+		//混合运算中，先全部转化成最大容量类型再计算
+		int pre = 1;
+		//char c = 1 + pre;//int大于char
+		//float d = 1.1 + pre;//错，默认double
+		double e = 1.1 + pre;//对
+
+		//用一个具体数值声明byte时，先判断是否在范围内，在则可以
+		//但是不能把变量付给byte
+		byte f = 127;//-128-127
+		byte g = pre;//错
+
+		//byte,short,char不能自动互转
+		//byte,short,char可以运算，但结果会转为int
+		byte h = f + f;//错
+
 	}
 }
 ```
