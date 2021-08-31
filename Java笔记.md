@@ -194,58 +194,11 @@ C++中char占1个字节而**Java中char占两个字节！**
 
 ​	汉字有对应的Unicode码，一个汉字可以用一个char表示
 
+Java中**浮点默认double**
+
+在 Java 中使用数值作为布尔值是非法的，即便这种操作在 C/C++ 中是被允许的（在这些语言中，“真”为非零，而“假”是零）。如果想在布尔测试中使用一个非布尔值，那么首先需要使用条件表达式来产生 **boolean** 类型的结果，例如 `if(a != 0)`。
+
 ```java
-//1.public的类hello
-public class hello{
-	//编写一个main方法
-	public static void main(String[] args){
-		System.out.println("hello walodo来个中文");
-	}
-}
-//2.非主类cat
-class cat{
-	//编写一个main方法
-	public static void main(String[] args){
-		System.out.println("mipa~");
-	}
-}
-//3.非主类char
-class charTest{
-	//编写一个main方法
-	public static void main(String[] args){
-		char a = 'a';//字符'a'
-		System.out.println(a);
-		char b = 97;//unicode码为97的字符
-		System.out.println(b);
-		char c = '宋';//字符'宋'
-		System.out.println(c);
-		char d = '9';//字符'9'
-		System.out.println(d);
-		char e = '\141';
-		System.out.println(e);
-		//以下非法：不知道为什么
-		// char f = '\0x0061';
-		// System.out.println(f);
-		
-		//建立字符与编码间的联系
-		System.out.println((int)c);//输出字符'宋'的Unicode码：23435
-		char f = 23435;//直接存'宋'的Unicode码
-		System.out.println(f);//用Unicode码输出字符'宋'
-		
-		//char相当于一个整数，可以直接参与运算
-		char g = 'a';
-		System.out.println(g + 10);
-	}
-}
-
-//4.格式化输出练习
-//一次多行注释用ctrl+/
-class println{
-	public static void main(String[] args){
-		System.out.println("java Test\n书名\t作者\t价格\t销量\n三国\t罗贯中\t120\t1000");
-	}
-}
-
 //6.数据类型转化练习
 class AutoConvertDetail{
 	public static void main(String[] args){
@@ -285,6 +238,8 @@ class AutoConvertDetail{
 ### **12.更改快捷键**
 
 在首选项-按键绑定-默认中查找(ctrl+f)到原有快捷键，复制到首选项-按键绑定-用户中(记得更改好新的快捷键!)
+
+### **13.**for-in循环
 
 
 
